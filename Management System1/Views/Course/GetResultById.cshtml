@@ -1,0 +1,26 @@
+﻿@using Management_System1.ViewModels
+
+@model  DataOfCourse
+
+  
+
+<table class="table table-hover table-bordered">
+
+
+    <th>ID</th>
+    <th>Name</th>
+    <th>CourseName</th>
+    <th>Degree</th>
+    <th>status</th>
+    <th></th>
+
+    <tbody>
+        <tr style="Background-Color:@Model.color" class="bg-@Model.color">
+            <th>@Model.Id</th>
+            <th>@Model.Name</th>
+            <th>@Model.CourseName</th>
+            <th>@Model.Degree</th>
+            <th>@Model.sucessOrFaild</th>
+        </tr>
+    </tbody>
+</table>

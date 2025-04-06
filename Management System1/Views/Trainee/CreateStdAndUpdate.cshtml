@@ -1,0 +1,77 @@
+﻿ @model Trainee ;
+
+<div class="mb-3">
+        <label asp-for="Name" class="form-label">Name</label>
+        <input type="text" class="form-control"  asp-for="Name">
+        <span asp-validation-for="Name" class="text-danger"></span>
+
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Address" class="form-label">Address</label>
+        <input type="text" class="form-control"  asp-for="Address">
+         <span asp-validation-for="Address" class="text-danger"></span>
+    </div>
+
+        <div class="mb-3">
+        <label asp-for="Age" class="form-label">Age</label>
+        <input type="number" class="form-control"  asp-for="Age">
+         <span asp-validation-for="Age" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Dept_Id" class="form-label">Department</label>
+        <select class="form-control" asp-for="Dept_Id">
+                         <option value="0">--Select Department--</option>
+        @foreach (var i in ViewBag.Depts)
+        {                        
+                                  <option value="@i.Id">@i.Name</option>
+        }
+        </select>
+         <span asp-validation-for="Dept_Id" class="text-danger"></span>
+  </div>
+
+
+
+
+
+
+  <div class="mb-3">
+        <label asp-for="Imag" class="form-label">Images</label>
+        <select class="form-control"  asp-for="Imag">
+
+      <option value="img1.jpg">img1</option>
+       <option value="img2.jpg">img2</option>
+        <option value="img3.jpg">img3</option>
+         <option value="img4.jpg">img4</option>
+
+
+        </select>
+         <span asp-validation-for="Imag" class="text-danger"></span>
+  </div>
+
+
+    <div class="mb-3">
+    <label asp-for="Email" class="form-label">Email address</label>
+    <input type="email" class="form-control"  aria-describedby="emailHelp" asp-for="Email">
+    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+     <span asp-validation-for="Email" class="text-danger"></span>
+  </div>
+
+
+ 
+      <div class="mb-3">
+        <label asp-for="Password" class="form-label">Password</label>
+        <input type="text" class="form-control"  asp-for="Password">
+         <span asp-validation-for="Password" class="text-danger"></span>
+    </div> 
+   <div class="mb-3">
+        <label asp-for="CPassword" class="form-label">CPassword</label>
+        <input type="text" class="form-control"  asp-for="CPassword">
+         <span asp-validation-for="CPassword" class="text-danger"></span>
+    </div>
+ 
+  <div class="mb-3 form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div>
+  <div asp-validation-summary="All" Class="text-danger"></div> 

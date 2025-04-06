@@ -1,0 +1,24 @@
+﻿@model LoginViewModel;
+ 
+
+<h2 class="text-center">Login</h2>
+
+<form method="post" class="w-50 mx-auto mt-4">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+      <div class="mb-3">
+    <label  asp-for="Name" class="form-label">UserName</label>
+    <input type="Text" class="form-control" asp-for="Name">
+      <span asp-validation-for="Name" class="text-danger"></span>
+  </div>
+
+  <div class="mb-3">
+    <label  asp-for="Passward" class="form-label">Password</label>
+    <input type="password" class="form-control" asp-for="Passward">
+      <span asp-validation-for="Passward" class="text-danger"></span>
+  </div>
+  <div class="mb-3 form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div>
+  <button type="submit" class="btn btn-primary w-100">Submit</button>
+</form>

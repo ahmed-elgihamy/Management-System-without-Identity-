@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewData["Title"] = "ManageRoles";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 class="text-danger d-flex justify-content-center"> @ViewBag.user.Name</h1>
+
+
+
+<h2>Manage Roles </h2>
+
+<form action="" method="post">
+    <div class="form-group">
+        <label for="rolesIn">Select Roles To Remove</label>
+        <select id="rolesIn" name="RolesToRemove" class="form-control" Multiple>
+
+            @foreach (var roleIn in ViewBag.RolesIn )
+            {
+          
+
+                    <option value="@roleIn.Id">@roleIn.Name</option>
+                
+            }
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="rolesOut">Select Roles To Add</label>
+            <select id="rolesOut" name="RolesToAdd" class="form-control" Multiple>
+     
+            @foreach (var roleOut in ViewBag.RolesOut )
+            {
+                        <option value="@roleOut.Id">@roleOut.Name</option>
+            }
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-danger mt-5 w-100">Change Roles</button>
+
+</form>

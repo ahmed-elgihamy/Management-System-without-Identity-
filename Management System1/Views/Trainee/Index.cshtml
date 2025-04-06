@@ -1,0 +1,44 @@
+﻿@using Management_System1.ViewModels
+@model DataShowTrainee
+
+<a type="button" class="btn btn-primary" href="Trainee/CreateStudent">Create New Student</a>
+<table class="table table-hover table-primary">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Age</th>
+            <th>Department</th>
+            <th>Course</th>
+            <th>Image</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.trainees)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+                <td>@item.Address</td>
+                <td>@item.Age</td>
+                 
+                <td>@item.Department.Name</td>
+                    
+             
+                        <td>
+                            <a asp-controller="Course" asp-action="GetResultById" asp-route-id="@item.Id">Show Courses</a>
+                        </td>
+                        <td>
+                            <img style="width: 100px; height: 100px;" src="/images/@item.Imag" alt="@item.Name Image" />
+                        </td>
+                        <td>
+                            <a asp-controller="Trainee" asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary">Edit</a>
+                            <a asp-controller="Trainee" asp-action="Details" asp-route-id="@item.Id" class="btn btn-warning">Details</a>
+                            <a asp-controller="Trainee" asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete @item.Name?')">Delete</a>
+                        </td>
+                    </tr>
+        }
+    </tbody>
+</table>

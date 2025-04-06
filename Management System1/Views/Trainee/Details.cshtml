@@ -1,0 +1,19 @@
+﻿@model Trainee
+
+<div class="d-flex justify-content-center mt-4">
+  <div class="card shadow rounded-4" style="width: 20rem;">
+    <img src="/images/@Model.Imag" class="card-img-top rounded-top-4" alt="@Model.Name">
+    <div class="card-body text-center">
+      <h5 class="card-title fw-bold">@Model.Name</h5>
+      <p class="card-text text-muted mb-2">@Model.Address</p>
+    </div>
+    <ul class="list-group list-group-flush text-center">
+      <li class="list-group-item">ID: <span class="fw-semibold">@Model.Id</span></li>
+      <li class="list-group-item">Email: <a href="mailto:@Model.Email" class="text-decoration-none">@Model.Email</a></li>
+    </ul>
+    <div class="card-footer text-center bg-white border-0 pb-3">
+      <a href="#" class="btn btn-primary btn-sm rounded-pill px-4">View Profile</a>
+    </div>
+  </div>
+</div>
+

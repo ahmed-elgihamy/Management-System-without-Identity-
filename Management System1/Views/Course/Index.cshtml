@@ -1,0 +1,36 @@
+﻿@model List<Course>
+
+<div class="container mt-4">
+    @if (Model == null || !Model.Any())
+    {
+            <div class="alert alert-info text-center" role="alert">
+                Not have any course yet
+            </div>
+    }
+    else
+    {
+            <div class="table-responsive">
+                <table class="table table-striped table-hover table-bordered shadow-sm">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Id</th>
+                            <th>Name</th>
+                            <th>Degree</th>
+                            <th>MinDegree</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    @foreach (var course in Model)
+                    {
+                                <tr>
+                                    <td>@course.Id</td>
+                                    <td>@course.Name</td>
+                                    <td>@course.Degree</td>
+                                    <td>@course.MinDegree</td>
+                                </tr>
+                    }
+                    </tbody>
+                </table>
+            </div>
+    }
+</div>
